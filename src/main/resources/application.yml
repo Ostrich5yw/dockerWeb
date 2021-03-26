@@ -1,0 +1,38 @@
+server:
+  port: 8000
+  servlet:
+    context-path:
+spring:
+  #  mvc:
+  #    view:
+  #      prefix: /WEB-INF/
+  #      suffix: .jsp
+  datasource:
+    name: test
+    url: jdbc:mysql://mysql:3306/test?serverTimezone=UTC   #纠正mysql8.0可能出现的时区错误
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver  #数据库链接驱动
+#  devtools:                         # 如果存在多个项目，则要更改默认的热部署端口
+#    livereload:
+#      port: 35730
+  redis:
+    host: redis
+    port: 6379
+  data:
+    mongodb:
+      host: mongo
+      port: 27017
+      username: root
+      password: 123456
+      authentication-database: admin
+      database: test
+  thymeleaf:                       # thymleaf默认搜索templates目录，我们可以更改这个目录
+    prefix: classpath:/static/
+mybatis:
+  mapper-locations: classpath:Mapper/*.xml  #配置映射文件
+  type-aliases-package: com.wyw.checkinsystem.entity.Mapper #配置实体类
+#logging:      #展示数据库日志文件  可以被druid取代
+#  level:
+#    com.example.mywebpage.dao: DEBUG
+

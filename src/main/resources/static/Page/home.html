@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span id="mysql"></span>
+<hr>
+<span id="redis"></span>
+<hr>
+<span id="mongo"></span>
+</body>
+<script>
+    var message1 = "Mysql更新后:" +[[${mysqlres}]];
+    var message2 = "Redis更新后:" +[[${redisres}]];
+    var message3 = "Mongo更新后:" +[[${mongores}]];
+    document.getElementById("mysql").textContent = message1;
+    document.getElementById("redis").textContent = message2;
+    document.getElementById("mongo").textContent = message3;
+</script>
+</html>
