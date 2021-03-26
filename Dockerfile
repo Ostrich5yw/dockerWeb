@@ -1,6 +1,6 @@
 # Docker image for springboot file run
 # VERSION 0.0.1
-# 基础镜像使用java
+# 基础镜像使用java8
 FROM java:8
 # 作者
 MAINTAINER 5yw <w1596253661@gmail.com>
