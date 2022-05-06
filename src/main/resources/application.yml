@@ -3,36 +3,49 @@ server:
   servlet:
     context-path:
 spring:
-  #  mvc:
+  mvc:
   #    view:
   #      prefix: /WEB-INF/
   #      suffix: .jsp
   datasource:
-    name: test
-    url: jdbc:mysql://mysql:3306/test?serverTimezone=UTC   #¾ÀÕımysql8.0¿ÉÄÜ³öÏÖµÄÊ±Çø´íÎó
+    name: workproject
+    url: jdbc:mysql://localhost:3306/workproject?serverTimezone=UTC   #çº æ­£mysql8.0å¯èƒ½å‡ºç°çš„æ—¶åŒºé”™è¯¯
     username: root
-    password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver  #Êı¾İ¿âÁ´½ÓÇı¶¯
-#  devtools:                         # Èç¹û´æÔÚ¶à¸öÏîÄ¿£¬ÔòÒª¸ü¸ÄÄ¬ÈÏµÄÈÈ²¿Êğ¶Ë¿Ú
-#    livereload:
-#      port: 35730
-  redis:
-    host: redis
-    port: 6379
+    password: azsx18327946
+    driver-class-name: com.mysql.cj.jdbc.Driver  #æ•°æ®åº“é“¾æ¥é©±åŠ¨
+    druid:
+      filters: log4j                                        # statç›‘æ§ç»Ÿè®¡  log4jæ—¥å¿—è®°å½•  wallé˜²æ­¢sqlæ³¨å…¥
+  devtools:                         # å¦‚æœå­˜åœ¨å¤šä¸ªé¡¹ç›®ï¼Œåˆ™è¦æ›´æ”¹é»˜è®¤çš„çƒ­éƒ¨ç½²ç«¯å£
+    livereload:
+      port: 35730
+  mail:
+    username: 1596253661@qq.com
+    password: sjjvxuahzcrrigbh
+    host: smtp.qq.com
+#  redis:
+#    host: 10.102.19.38
+#    port: 6379
   data:
     mongodb:
-      host: mongo
+      host: 127.0.0.1
       port: 27017
       username: root
-      password: 123456
+      password: Ostrich5yw
       authentication-database: admin
-      database: test
-  thymeleaf:                       # thymleafÄ¬ÈÏËÑË÷templatesÄ¿Â¼£¬ÎÒÃÇ¿ÉÒÔ¸ü¸ÄÕâ¸öÄ¿Â¼
+      database: workproject
+  #  web:
+  #    resources:
+  #      static-locations: classpath:static/
+  thymeleaf:                       # thymleafé»˜è®¤æœç´¢templatesç›®å½•ï¼Œæˆ‘ä»¬å¯ä»¥æ›´æ”¹è¿™ä¸ªç›®å½•
     prefix: classpath:/static/
 mybatis:
-  mapper-locations: classpath:Mapper/*.xml  #ÅäÖÃÓ³ÉäÎÄ¼ş
-  type-aliases-package: com.wyw.checkinsystem.entity.Mapper #ÅäÖÃÊµÌåÀà
-#logging:      #Õ¹Ê¾Êı¾İ¿âÈÕÖ¾ÎÄ¼ş  ¿ÉÒÔ±»druidÈ¡´ú
+  mapper-locations: classpath:Mapper/*.xml  #é…ç½®æ˜ å°„æ–‡ä»¶
+  type-aliases-package: com.example.workproject.entity.Mapper #é…ç½®å®ä½“ç±»
+#logging:      #å±•ç¤ºæ•°æ®åº“æ—¥å¿—æ–‡ä»¶  å¯ä»¥è¢«druidå–ä»£
 #  level:
+logging:
+  file:
+    name: mylog.log
+    path: E:\IdeaProjects\dockerweb\src\main\resources\
 #    com.example.mywebpage.dao: DEBUG
 

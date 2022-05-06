@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  dockerweb:
+    build: .
+    depends_on:
+      - mysql
+      - redis
+      - mongo
+    ports:
+    - 8000:8000
+  mysql:
+    image: 'mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: azsx18327946
+    container_name: "mysql"
+    restart: always
+    ports:
+    - 3306:3306
+    volumes:
+    - /home/ostrich5yw/Desktop/DockerCompose/mysql/db:/var/lib/mysql
+    - /home/ostrich5yw/Desktop/DockerCompose/mysql/log:/var/log/mysql
+    - /home/ostrich5yw/Desktop/DockerCompose/mysql/conf/my.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+  redis:
+    image: 'redis'
+    container_name: "redis"
+    restart: always
+    volumes:
+    - /home/ostrich5yw/Desktop/DockerCompose/redis/data:/data
+    - /home/ostrich5yw/Desktop/DockerCompose/redis/redis.conf:/etc/redis/redis.conf
+  mongo:
+    image: 'mongo'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: Ostrich5yw
+    container_name: "mongo"
+    restart: always
+    volumes:
+      - /home/ostrich5yw/Desktop/DockerCompose/mongo/db:/data/db
+      - /home/ostrich5yw/Desktop/DockerCompose/mongo/log:/data/logs
+    ports:
+      - 27017:27017
+

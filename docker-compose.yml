@@ -11,9 +11,9 @@ services:
   mysql:
     image: 'mysql'
     environment:
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: xxx
       MYSQL_USER: root
-      MYSQL_PASS: 123456
+      MYSQL_PASS: xxx
     container_name: "mysql"
     restart: always
     ports:
@@ -33,7 +33,7 @@ services:
     image: 'mongo'
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: 123456
+      MONGO_INITDB_ROOT_PASSWORD: Ostrich5yw
     container_name: "mongo"
     restart: always
     volumes:
