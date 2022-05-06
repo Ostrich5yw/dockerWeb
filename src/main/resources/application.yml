@@ -11,7 +11,7 @@ spring:
     name: workproject
     url: jdbc:mysql://localhost:3306/workproject?serverTimezone=UTC   #纠正mysql8.0可能出现的时区错误
     username: root
-    password: azsx18327946
+    password: xxx
     driver-class-name: com.mysql.cj.jdbc.Driver  #数据库链接驱动
     druid:
       filters: log4j                                        # stat监控统计  log4j日志记录  wall防止sql注入
@@ -20,7 +20,7 @@ spring:
       port: 35730
   mail:
     username: 1596253661@qq.com
-    password: sjjvxuahzcrrigbh
+    password: xxx
     host: smtp.qq.com
 #  redis:
 #    host: 10.102.19.38
@@ -30,7 +30,7 @@ spring:
       host: 127.0.0.1
       port: 27017
       username: root
-      password: Ostrich5yw
+      password: xxx
       authentication-database: admin
       database: workproject
   #  web:
